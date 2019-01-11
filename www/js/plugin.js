@@ -59,9 +59,9 @@ console.log(object);
 
 //Task 1
 
-let x;
+let x = 'visible';
 
-if (x == 'hidden') {
+if (x === 'hidden') {
     x = 'visible';
 } else {
     x = 'hidden'
@@ -72,7 +72,7 @@ if (x == 'hidden') {
 
 let variable = 10;
 
-if ( variable == 0 ) {
+if ( variable === 0 ) {
     variable = 1;
 } else if ( variable < 0 ) {
     variable = 'less than zero'
@@ -105,7 +105,7 @@ let item = {
 if ( item.discount && parseFloat(item.discount) > 0 ) {
     item.priceWithDiscount = parseFloat(item.price) - (parseFloat(item.price)* parseFloat(item.discount) / 100);
     console.log(item.priceWithDiscount);
-} else if (item.discount) {
+} else {
     console.log(item.price);
 }
 
