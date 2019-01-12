@@ -4,7 +4,7 @@ function multiply() {
 
     if( arguments.length === 0 ){
         return 0;
-    } else {
+    } 
         let result = 1;
 
         for( let i = 0; i < arguments.length; i++ ) {
@@ -12,7 +12,6 @@ function multiply() {
         }
         
         return result;
-    }
 };
 
 //Task 2
@@ -22,6 +21,7 @@ function reversedString(str) {
     let newStr = str.split('').reverse().join('');
 
     return newStr;
+    //return letter.split('').reverse().join('')
 
 } 
 
