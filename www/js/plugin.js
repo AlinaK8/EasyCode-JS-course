@@ -55,6 +55,8 @@ let reverseArr = function(el) {
         reverse += el[i];
     }
     return reverse + ', ';
+    
+    // return str.split('').reverse().join('') + ' , '; - the short version
 };
 
 let reverseResult = arrayUpdater(arrToReverse, reverseArr);
@@ -77,6 +79,19 @@ function every(arr, handler) {
         return checking;
     }   
 };
+
+// function every(arr, handler) {
+//     if (!arr) return 'please fill in array';
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (!handler(arr[i], i, arr)){
+//             return false;
+//         } 
+//     }   
+    
+//     return true;
+// };
+
 
 let callbackCheck = function(number, i, arr) {
     return number > 5 + i + arr;
