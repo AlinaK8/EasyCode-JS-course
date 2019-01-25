@@ -9,8 +9,8 @@
 
 
 function getNewValue(...rest) {
-    if (!rest.length) return "please enter value!"
-    return 
+    const [value1, ...others] = rest;
+    return `first: ${value1}, others: ${others}`;
 }
 
 //Task 2
@@ -21,10 +21,15 @@ function getNewValue(...rest) {
 
 const organisation = {  
   name: 'Google',   
-  info: { employees: [‘Vlad’, ‘Olga’], partners: ['Microsoft', 'Facebook', 'Xing']   } 
+  info: { employees: ['Vlad', 'Olga'], partners: ['Microsoft', 'Facebook', 'Xing']   } 
 };
 // getInfo(organisation); → 
 // Name: Google 
 // Partners: Microsoft Facebook
 
-function getInfo()
+function getInfo(obj) {
+    const {name = 'Unknown', info: {partners: [company1, company2]}} = obj;
+    console.log(`name: ${name}`);
+    console.log(`partners: ${company1}, ${company2}`);
+};
+
