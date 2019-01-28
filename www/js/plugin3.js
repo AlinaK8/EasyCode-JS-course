@@ -9,15 +9,12 @@
 
 let ul = document.querySelector('ul');
 
-function count(ul) {
-    return liCount = ul.children.length;
-}
-
 function addLi(str, ul) {
 
     let newLi = document.createElement('li');
+    liCount = ul.children.length
 
-    newLi.innerHTML += str + (count(ul) + 1)
+    newLi.innerHTML += str + (liCount + 1)
     newLi.setAttribute('class', 'new-item');
 
     return ul.appendChild(newLi);
