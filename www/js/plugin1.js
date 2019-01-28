@@ -11,7 +11,7 @@ function checkNode(node) {
     return {
         nodeType: node.nodeType,
         nodeName: node.nodeName,
-        nodeChildren: !node.childNodes ? 0 : node.childNodes.length
+        nodeChildren: node.childNodes.length
     }
 
 }
