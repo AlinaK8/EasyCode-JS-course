@@ -154,19 +154,18 @@ const calculator = (function() {
 // lexus.получитьМарку(); // “Lexus”
 // lexus.получитьГодВыпуска(); // 2014 (2016-2);
 // Марка машины всегда должна возвращаться с большой буквы!
-
 function CarManufacture(brand, carAge) {
 
+    this.brand =  brand;
+    this.carAge = carAge;
+
     this.showBrand = function() {
-        return brand;
+        return brand[0].toUpperCase() + brand.slice(1);
     }
 
     this.getYearOfManufacture = function() {
-        let todayDate = new Date();
-        
+        return new Date().getFullYear() - this.carAge;
     }
-
-
 }
 
 
