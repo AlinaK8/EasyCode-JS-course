@@ -33,14 +33,15 @@ function onInputChange(event){
     if (phrase.length < 3 || typeof phrase != 'string') return console.error('Please enter value that is a text phrase and more than 3');
 
     newsService.getNewsByPhrase(phrase, (response) => {
-        if (!response.length) {
-            alert.showAlert();
-        } else {
-            const { totalResults, articles } = response;
+    
+        const { totalResults, articles } = response;
 
-            uiService.clearContainer();
-            articles.forEach((article) => uiService.addArticle(article));
-        }    
+        uiService.clearContainer();
+        articles.forEach((article) => uiService.addArticle(article));
+        
+        if (!totalResults) {
+            alert.showAlert();
+        }        
     });
 }
 

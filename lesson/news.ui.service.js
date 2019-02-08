@@ -110,8 +110,11 @@ class Alert {
 
     static generateTemplate() {
         return `
-        <div class="alert alert-danger" role="alert">
-            The requested piece of news is not found!
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+             The requested piece of news is not found!
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+             </button>
         </div>
        `
     }
