@@ -1,5 +1,6 @@
 const newsService = new NewsService();
 const uiService = new NewsUI();
+const alert = new Alert();
 
 // UI Elements
 const form = document.forms['newsControlForm'];
@@ -32,10 +33,14 @@ function onInputChange(event){
     if (phrase.length < 3 || typeof phrase != 'string') return console.error('Please enter value that is a text phrase and more than 3');
 
     newsService.getNewsByPhrase(phrase, (response) => {
-        const { totalResults, articles } = response;
+        if (!response.length) {
+            alert.showAlert();
+        } else {
+            const { totalResults, articles } = response;
 
-        uiService.clearContainer();
-        articles.forEach((article) => uiService.addArticle(article));
+            uiService.clearContainer();
+            articles.forEach((article) => uiService.addArticle(article));
+        }    
     });
 }
 

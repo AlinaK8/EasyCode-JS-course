@@ -95,3 +95,24 @@ class NewsUI {
         return newDiv;
     }
 }
+
+
+class Alert {
+
+    constructor() {
+        this.form = document.querySelector('.form-wrap');
+    } 
+
+    showAlert(){
+        const alert = Alert.generateTemplate();
+        this.form.insertAdjacentHTML('afterend', alert);
+    }
+
+    static generateTemplate() {
+        return `
+        <div class="alert alert-danger" role="alert">
+            The requested piece of news is not found!
+        </div>
+       `
+    }
+}
