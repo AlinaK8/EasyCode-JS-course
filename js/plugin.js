@@ -30,15 +30,20 @@ prom.then(console.log);
 // const inst = new Prom(); inst.promise.then(data => console.log(data)); inst.resolve('test');
 // → test
 
-class Promise {
-    
-}    
+class Prom {
+    constructor(){
+        this.promise = new Promise((resolve, reject) => {
+            this.resolve = resolve;
+            this.reject = reject;
+        });
+    }
+}
 
+const inst = new Prom();
+inst.promise
+    .then(data => console.log(data));
 
-// const instance = new Promise();
-// inst.promise
-//          .then(data => console.log(data)); 
-// inst.resolve('test');
+inst.resolve("test"); 
 
 
 
