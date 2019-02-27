@@ -17,3 +17,54 @@ User.prototype.getInfo = function() {
         Registration Date: ${this.registrationDate}
     }`
 }
+
+
+function Admin(name, registrationDate) {
+    User.apply(this, arguments);
+    this._superAdmin = true;
+}
+
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.constructor = Admin;
+
+Admin.prototype.validUntil = function() {
+    let creationDate = new Date(this.registrationDate);
+    creationDate.setDate(creationDate.getDate() + 30);
+    return creationDate;
+}
+
+Admin.prototype.getInfo = function() {
+    return `
+      {
+        User Name: ${this.name},
+        Registration Date: ${this.registrationDate},
+        SuperAdmin: ${this._superAdmin}
+        Valid Until: ${this.validUntil()};
+      }
+    `
+}
+
+let admin = new Admin('Vasya', '01/12/2019');
+admin.getInfo();
+
+function Guest(name, registrationDate, validUntil) {
+    User.apply(this, arguments);
+    this.validUntil = validUntil;
+}
+
+Guest.prototype = Object.create(User.prototype);
+Guest.prototype.constructor = Guest;
+
+Guest.prototype.getInfo = function() {
+    return `
+    {
+      User Name: ${this.name},
+      Registration Date: ${this.registrationDate},
+      SuperAdmin: false,
+      Valid Until: ${this.validUntil}
+    }
+  `
+}
+
+let guestUser = new Guest('John', '01/02/2019', '02/01/2019');
+guestUser.getInfo();
