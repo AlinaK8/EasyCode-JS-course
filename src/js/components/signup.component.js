@@ -19,8 +19,6 @@ export class SignupComponent {
            <label for="inputPassword4">Password</label>
            <input type="password" class="form-control" id="password" placeholder="Password">
          </div>
-       
-   
     
            <div class="form-group col-md-8">
                <label for="inputNickname">Nickname</label>
@@ -28,33 +26,30 @@ export class SignupComponent {
            </div>
      
    
-      
        <div class="form-group col-md-4">
            <label for="inputFirstName">First Name</label>
-           <input type="text" class="form-control" id="firstName" placeholder="John">
+           <input type="text" class="form-control" id="first_name" placeholder="John">
         </div>
+
          <div class="form-group col-md-4">
            <label for="inputLastName">Last Name</label>
-           <input type="text" class="form-control" id="lastName" placeholder="Pupkovich">
+           <input type="text" class="form-control" id="last_name" placeholder="Pupkovich">
          </div>
-
-   
        
         <div class="form-group col-md-8">
             <label for="inputPhone">Phone</label>
-            <input type="text" class="form-control" id="Phone" placeholder="1234567">
+            <input type="text" class="form-control" id="phone" placeholder="1234567">
         </div>
+
         <div class="form-group col-md-8">
            <label for="inputGender">Gender</label>
-           <select id="gender" class="form-control">
+           <select id="gender_orientation" class="form-control">
              <option selected>Choose...</option>
              <option>Male</option>
              <option>Female</option>
            </select>
          </div>
       
-   
-       
        <div class="form-group col-md-4">
             <label for="inputCity">City</label>
             <input type="text" class="form-control" id="city" placeholder="New York">
@@ -68,15 +63,15 @@ export class SignupComponent {
       
            <div class="form-group col-md-2">
                <label for="inputDay">Day of Birth</label>
-               <input type="text" class="form-control" id="dayOfBirth" placeholder="1">
+               <input type="text" class="form-control" id="date_of_birth_day" placeholder="1">
            </div>
            <div class="form-group col-md-2">
                <label for="inputMonth">Month of Birth</label>
-               <input type="text" class="form-control" id="monthOfBirth" placeholder="january">
+               <input type="text" class="form-control" id="date_of_birth_month" placeholder="01">
            </div>
            <div class="form-group col-md-2">
                <label for="inputYear">Year of Birth</label>
-               <input type="text" class="form-control" id="yearOfBirth" placeholder="1900">
+               <input type="text" class="form-control" id="date_of_birth_year" placeholder="1900">
            </div>
        </div>
        <button type="submit" class="btn btn-primary">Sign up</button>
@@ -92,15 +87,15 @@ export class SignupComponent {
                 email: e.target.elements['email'].value,
                 password: e.target.elements['password'].value,
                 nickname: e.target.elements['nickname'].value,
-                firstName: e.target.elements['firstName'].value,
-                lastName: e.target.elements['lastName'].value,
+                first_name: e.target.elements['first_name'].value,
+                last_name: e.target.elements['last_name'].value,
                 phone: e.target.elements['phone'].value,
-                gender: e.target.elements['gender'].value,
+                gender_orientation: e.target.elements['gender_orientation'].value,
                 city: e.target.elements['city'].value,
                 country: e.target.elements['country'].value,
-                dayOfBirth: e.target.elements['dayOfBirth'].value,
-                monthOfBirth: e.target.elements['monthOfBirth'].value,
-                yearOfBirth: e.target.elements['yearOfBirth'].value
+                date_of_birth_day: e.target.elements['date_of_birth_day'].value,
+                date_of_birth_month: e.target.elements['date_of_birth_month'].value,
+                date_of_birth_year: e.target.elements['date_of_birth_year'].value
             }
             
             this._signupservice.signup(user)
