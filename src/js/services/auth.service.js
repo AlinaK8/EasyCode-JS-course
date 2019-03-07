@@ -2,12 +2,11 @@ import { Http } from './../core/http.service';
 import { ENV } from './../config/env';
 
 export class AuthService {
-    get userId() {
-        return localStorage.getItem('sn_user_id');
-    }
-
     get token() {
         return localStorage.getItem('sn_user_token');
+    }
+    get userId() {
+        return localStorage.getItem('sn_user_id');
     }
 
     login(email, password) {
@@ -23,5 +22,14 @@ export class AuthService {
                 })
                 .catch((err) => reject(err));
         });
+    }
+
+    logout() {
+        return new Promise((resolve, reject) => {
+            localStorage.removeItem('sn_user_id');
+            localStorage.removeItem('sn_user_token');
+
+            resolve();
+        }); 
     }
 }
